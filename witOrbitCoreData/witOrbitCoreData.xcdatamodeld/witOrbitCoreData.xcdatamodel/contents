@@ -1,4 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="File" representedClassName="File" syncable="YES" codeGenerationType="class">
+        <attribute name="file_created_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="file_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="file_subject" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="file_title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="file_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="group_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Groups" syncable="YES"/>
+    </entity>
+    <entity name="Groups" representedClassName="Groups" syncable="YES" codeGenerationType="class">
+        <attribute name="admins_id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="created_date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="group_description" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="group_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="group_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="img_link" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Message_table" representedClassName="Message_table" syncable="YES" codeGenerationType="class">
+        <attribute name="group_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="message_group_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="message_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="message_type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="message" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Groups" syncable="YES"/>
+    </entity>
+    <entity name="Notifications" representedClassName="Notifications" syncable="YES" codeGenerationType="class">
+        <attribute name="group_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notification_created_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="notification_detail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notification_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="notification_title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="relationship" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Groups" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Groups" positionX="-531" positionY="-90" width="126" height="135"/>
+        <element name="Message_table" positionX="-261" positionY="-135" width="128" height="118"/>
+        <element name="Notifications" positionX="-252" positionY="-9" width="128" height="135"/>
+        <element name="File" positionX="-360" positionY="9" width="128" height="150"/>
+    </elements>
 </model>

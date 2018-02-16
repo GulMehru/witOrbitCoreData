@@ -91,3 +91,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+let appdelegate = UIApplication.shared.delegate as! AppDelegate
+let context =  appdelegate.persistentContainer.viewContext
+
